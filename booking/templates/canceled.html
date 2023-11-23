@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+<div>
+  <h2 style="text-align: center" class="mt-2">
+    <img
+      src="{% static 'img/f.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+    Ditt köp avbröts!
+    <img
+      src="{% static 'img/f.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+  </h2>
+  <hr />
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <img
+      src="{% static 'img/canceled.png' %}"
+      style="width: 100%"
+      class="border border-dark mb-3"
+    />
+  </div>
+  <div class="col-lg-6">
+    <p>
+      Ditt köp har <span class="text-danger">inte genomförts</span>, och inga
+      pengar har dragits. När du har ångrat dig, och vill gå hela vägen med din
+      biljettbokning, så är det bara att smita in på
+      <a href="/tickets/" class="text-danger">biljettsidan</a> och göra om
+      köpet!
+    </p>
+  </div>
+</div>
+{% endblock %}

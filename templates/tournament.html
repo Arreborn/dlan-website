@@ -1,0 +1,825 @@
+{% extends 'base.html' %} {% load static %}{% block body %}
+<h2 style="text-align: center" class="mt-2">
+  <img
+    src="{% static 'img/t.png' %}"
+    style="height: 2em; width: 2em"
+    class="mx-2"
+  />
+  Tournaments
+  <img
+    src="{% static 'img/t.png' %}"
+    style="height: 2em; width: 2em"
+    class="mx-2"
+  />
+</h2>
+<hr />
+<button
+  class="btn btn-secondary mb-2"
+  data-bs-target="#register"
+  data-bs-toggle="modal"
+  style="width: 100%"
+>
+  <h4 class="m-0">Tournament schedule</h4>
+</button>
+<div>
+  <p>
+    Tournament registration is now closed, however, last minute entries may be
+    possible up to one hour before the tournament starts. Please contact
+    TobiasE#2228 on Discord if you're interested in a last minute entry.
+  </p>
+  <p>
+    The prizes for each individual tournament can be found in their respective
+    tabs. All prizes will be awarded through gift-cards, unless explicitly
+    stated otherwise. For team-games, these prizes will be evenly distributed to
+    all team members. If there are any questions regarding tournament rules or
+    prizes, please contact
+    <a href="mailto:turnering@d-lan.se" class="text-danger"
+      >turnering@d-lan.se</a
+    >
+  </p>
+
+  <div class="text-center mt-4">
+    <a
+      href="https://discord.gg/dCz3mfMXCa"
+      class="btn btn-primary btn-block mb-2"
+      style="width: 100%"
+      target="_BLANK"
+    >
+      <h4 class="mb-0">Discord</h4>
+    </a>
+  </div>
+</div>
+<div id="accordion" class="mb-1">
+  <div>
+    <a
+      class="collapsed btn bg-custom mb-2"
+      data-bs-toggle="collapse"
+      href="#collapseZero"
+      style="width: 100%"
+    >
+      <h4 style="color: white" class="mb-0">General Tournament Rules</h4>
+    </a>
+    <div id="collapseZero" class="collapse" data-bs-parent="#accordion">
+      <div class="collapse-pad p-2 mb-2">
+        <h4>Tournament process:</h4>
+        <ul
+          class="list-group list-group-flush list-group-numbered bg-transparent"
+        >
+          <li class="list-group-item bg-transparent border-dark">
+            Team Captains join the tournament through a Google Form which is
+            supplied by D-LAN. Your team has to be complete throughout the
+            tournament, meaning you can have no vacant positions when entering
+            the tournament.
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                If your team wants to have a substitute player, in case of a
+                player not showing up or having to leave the LAN early, the Team
+                Captain can register the player to the referee at the actual LAN
+                itself. This has to happen at least 30 minutes before the actual
+                tournament starts.
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Each player can be a part of one team only. This includes
+                substitute players as well.
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                The teams will communicate in their assigned discord-channel
+                during the whole tournament.
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            All players must have a legitimate D-LAN Computer Ticket close by
+            for tournaments during D-LAN. This does not apply during D-WAN.
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                This means that if you are a +1 to someone's LiU-ID or someone
+                else is paying your ticket, they have to be close by to verify
+                your credibility.
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            All remaining players must be close by throughout the whole
+            tournament.
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                This does not apply to the teams that has been eliminated or
+                disqualified.
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                IMPORTANT: If the other team has not accepted or joined your
+                game within 10 minutes, you are to report this to the referee.
+                If the other team is absent they will be notified by some means.
+                If the other team fails to respond within 5 minutes, they will
+                be disqualified.
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Team Captains have the responsibility to make contact with each
+            other and invite their teams to the game.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            The winning team has to send a screenshot of the results to the
+            referee in the respective tournament #results discord channel and
+            the bracket will shortly be updated.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Team captains must update the referee beforehand and provide full
+            details on players and stand-ins. This includes full name and
+            player-ID.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Usage of unsportsmanlike, disrespectful, sexist or derogatory terms
+            during the tournament is strictly forbidden. This includes In-Game
+            nicknames, In-Game item name tags or In-Game chat.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            If the game would freeze or crash mid-match, the referee will decide
+            whether the match will be restarted or have any other outcome.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Disconnect mid-draft will result in a restarted draft face with the
+            same picks and bans as up to that point.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            If a player were to be disconnected mid-match:
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                The game will pause and the player who disconnected will have 5
+                minutes to reconnect. After 5 minutes the game will start again
+                and the team with the disconnected member will play with only
+                four members.
+                <ul
+                  class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+                >
+                  <li class="list-group-item bg-transparent border-dark">
+                    Players are allowed to pause the game if they have a
+                    legitimate reason, such as disconnects.
+                  </li>
+                  <li class="list-group-item bg-transparent border-dark">
+                    The disconnected player are allowed to try and reconnect
+                    even when the game has started again.
+                  </li>
+                </ul>
+              </li>
+
+              <li class="list-group-item bg-transparent border-dark">
+                Disconnecting on purpose or pausing the game without a
+                legitimate reason, will be considered cheating and result in
+                disqualification.
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Send all questions to
+            <a href="mailto:turnering@d-lan.se">turnering@d-lan.se</a> before
+            and after the LAN. During the LAN, send the questions via Discord in
+            the channel #tournament-questions, or ping / DM @Turnering & Biljett
+            through the Discord server.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+    <a
+      class="collapsed btn bg-custom mb-2"
+      data-bs-toggle="collapse"
+      href="#collapseTwo"
+      style="width: 100%"
+    >
+      <h4 style="color: white" class="mb-0">League of Legends</h4>
+    </a>
+    <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+      <div class="text-center">
+        <h2 class="py-2">Tournament start: 14:00 13/5</h2>
+        <h4>
+          Sponsored by
+          <a
+            href="https://webhallen.se/"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <img
+              src="{% static 'img/spons/webhallen_dark.png' %}"
+              style="height: 1.6em"
+          /></a>
+          and
+          <a href="https://idainfront.se" target="_blank">
+            <img
+              src="{% static 'img/spons/idainfront_dark.png' %}"
+              style="height: 1em; padding-bottom: 4px; padding-left: 4px"
+            />
+          </a>
+        </h4>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/first_lrg_2500.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">2500 KR gift cards to Webhallen</p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/second_lrg_1500.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">1500 KR gift cards to Webhallen</p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/third_lrg_1000.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">1000 KR gift cards to Webhallen</p>
+        </div>
+      </div>
+      <hr />
+      <div class="collapse-pad p-2 mb-2">
+        <h4>Bracket rules:</h4>
+        <ul class="list-group list-group-flush list-group-numbered">
+          <li class="list-group-item bg-transparent border-dark">
+            Tournament format is Single Elimination
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Team size: 5 players, of which at least 3 are LiU-students
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            The first matches will be randomized to determine which teams will
+            face each other
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            All matches will be played best of one game
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                The D-WAN tournament will not have bronze finals - only the
+                standard final round
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                This means that the losing teams of the semi-finals will be
+                facing each other in the bronze match to determine the 3rd place
+                (this will not be seen in the bracket)
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                3rd place -- Bronze finals winner
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                2nd place -- Finals loser
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                1st place -- Finals winner
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Coin toss will decide which team will start on each side (blue/red)
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                The winner of the coin toss will decide which side they want
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <h4>Game specific rules:</h4>
+        <ul class="list-group list-group-flush list-group-numbered">
+          <li class="list-group-item bg-transparent border-dark">
+            Map: Summoner's Rift
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Team size: 5 players
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Game type: Tournament draft
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            All players need an EU-West valid account
+          </li>
+        </ul>
+        <!--
+          <h4>Setup (for D-WAN):</h4>
+          <p>
+            Contact your opponent's team captain via Discord (you will find
+            their Discord name in the tournament bracket) so you can exchange
+            League of Legends IDs and set up the game, if you have any questions
+            or concerns contact the referee on discord. The winner reports back
+            to the referee that they won.
+          </p>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <a
+      class="btn bg-custom mb-2"
+      data-bs-toggle="collapse"
+      href="#collapseOne"
+      style="width: 100%"
+    >
+      <h4 style="color: white" class="mb-0">CS:GO</h4>
+    </a>
+    <div id="collapseOne" class="collapse" data-bs-parent="#accordion">
+      <div class="text-center">
+        <h2 class="py-2">Tournament start: 22:00 13/5</h2>
+        <h4>
+          Sponsored by
+          <a
+            href="https://webhallen.se/"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <img
+              src="{% static 'img/spons/webhallen_dark.png' %}"
+              style="height: 1.6em"
+          /></a>
+          and
+          <a href="https://idainfront.se" target="_blank">
+            <img
+              src="{% static 'img/spons/idainfront_dark.png' %}"
+              style="height: 1em; padding-bottom: 4px; padding-left: 4px"
+            />
+          </a>
+        </h4>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/first_lrg_2500.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">2500 KR gift cards to Webhallen</p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/second_lrg_1500.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">1500 KR gift cards to Webhallen</p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/third_lrg_1000.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">1000 KR gift cards to Webhallen</p>
+        </div>
+      </div>
+      <hr />
+      <div class="collapse-pad p-2 mb-2">
+        <h4>Bracket rules:</h4>
+        <ul class="list-group list-group-flush list-group-numbered">
+          <li class="list-group-item bg-transparent border-dark">
+            Tournament format is Single Elimination.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Team size: 5 players, of which at least 3 are LiU-students
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            The first matches will be randomized to determine which teams will
+            face each other.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            All matches will be played in a best of 1, except the finals
+            (counting the bronze match) which will be played in a best of 3.
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                This means that the losing teams of the semi-finals will be
+                facing each other in the bronze match to determine the 3rd place
+                team (this will not be seen in the bracket)
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                3rd place -- Bronze finals winner
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                2nd place -- Finals loser
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                1st place -- Finals winner
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Coin toss will decide which team will start on each side
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            The winner of the coin toss will decide which side they want
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            In the best of 3 matches, the teams will switch sides in the second
+            and third round
+          </li>
+        </ul>
+        <h4>Game specific rules:</h4>
+        <ul class="list-group list-group-flush list-group-numbered border-dark">
+          <li class="list-group-item bg-transparent border-dark">
+            Maps: Anubis, Nuke, Ancient, Mirage, Inferno, Overpass, Vertigo
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Note: The map pool will be the Active Duty map pool and therefore
+            might be updated before the tournament.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Team size: 5 players
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Player agents are not allowed
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Best-of-One (Bo1) Matches
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Team A starts the process and the order of the ban / pick is as
+            follows:
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                Team A removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team B removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team A removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team B removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team A removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team B removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Remaining map is being played
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Winner of knife round gets to pick sides
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Best-of-Three (Bo3) Matches:
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                Team A removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team B removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team A removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team B removes one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team A picks one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Team B picks one map
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Remaining map is being played as a decider, if required
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Every map starts with a knife round, winner of knife round gets
+                to pick sides
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            In case of a draw after all 30 rounds have been played, an overtime
+            will be played best of 6 with $10,000 start money. Teams will
+            continue to play overtime until a winner has been found.
+          </li>
+        </ul>
+        <h4>Illegal scripting:</h4>
+        <ul class="list-group list-group-flush list-group-numbered">
+          <li class="list-group-item bg-transparent border-dark">
+            Generally, scripts that are made ingame are allowed, some examples
+            include buy, toggle and demo scripts.
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                No recoil scripts
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Rate changers (Lag scripts)
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                FPS scripts
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                Bunny hop scripts
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <a
+      class="collapsed btn bg-custom mb-2 mb-2"
+      data-bs-toggle="collapse"
+      href="#collapseThree"
+      style="width: 100%"
+    >
+      <h4 style="color: white" class="mb-0">Teamfight Tactics</h4>
+    </a>
+    <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+      <div class="text-center">
+        <h2 class="py-2">Tournament start: 23:00 12/5</h2>
+        <h4>
+          Sponsored by
+          <a
+            href="https://webhallen.se/"
+            target="_blank"
+            style="text-decoration: none"
+          >
+            <img
+              src="{% static 'img/spons/webhallen_dark.png' %}"
+              style="height: 1.6em"
+          /></a>
+          and
+          <a href="https://idainfront.se" target="_blank">
+            <img
+              src="{% static 'img/spons/idainfront_dark.png' %}"
+              style="height: 1em; padding-bottom: 4px; padding-left: 4px"
+            />
+          </a>
+        </h4>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/first_lrg_1500.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">1500 KR gift card to Webhallen</p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/second_lrg_1500.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">One Razer-keyboard worth 1500 KR</p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/third_lrg_400.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">Gaming-kit from Deltaco, worth 400 KR</p>
+        </div>
+      </div>
+      <div class="text-center my-2"><p>4th place: 250 KR</p></div>
+      <hr />
+      <div class="collapse-pad p-2 mb-2">
+        <h4>Bracket rules:</h4>
+        <ul class="list-group list-group-flush list-group-numbered">
+          <li class="list-group-item bg-transparent border-dark">
+            Tournament format is Single Elimination. The top 4 players from
+            every match will proceed to the next stage in the bracket.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Single player tournament: Any D-LAN attendee may enter the
+            tournament
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            The first matches will be randomized to determine which players face
+            each other.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            All matches will be played as a best of 1.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            In the case where a lobby can't be filled fully the open slots will
+            be filled with public players.
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                The public players will not count towards standings.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <h4>Game specific rules:</h4>
+        <ul class="list-group list-group-flush list-group-numbered">
+          <li class="list-group-item bg-transparent border-dark">
+            All lobbies will be normal games (Not ranked or hyperroll)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <a
+      class="collapsed btn bg-custom mb-2"
+      data-bs-toggle="collapse"
+      href="#collapseFour"
+      style="width: 100%"
+    >
+      <h4 style="color: white" class="mb-0">Chess</h4>
+    </a>
+    <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
+      <div class="text-center">
+        <h2 class="py-2">Tournament start: 10:00 13/5</h2>
+        <h4>
+          Sponsored by
+          <a href="https://webhallen.se/" target="_blank">
+            <img
+              src="{% static 'img/spons/webhallen_dark.png' %}"
+              style="height: 1.6em"
+            />
+          </a>
+        </h4>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/first_lrg_1500.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">1500 KR gift card to Webhallen</p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/second_lrg_1500.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">One Razer-keyboard worth 1500 KR</p>
+        </div>
+        <div class="col-sm-4">
+          <img
+            src="{% static 'img/third_lrg_400.png' %}"
+            style="width: 100%"
+            class="mb-1"
+          />
+          <p class="text-center">Gaming-kit from Deltaco, worth 400 KR</p>
+        </div>
+      </div>
+      <hr />
+      <div class="collapse-pad p-2 mb-0">
+        <h4>Bracket rules:</h4>
+        <ul
+          class="list-group list-group-flush list-group-numbered bg-transparent"
+        >
+          <li class="list-group-item bg-transparent border-dark">
+            Tournament format is Double Elimination.
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Single player tournament: Any D-LAN attendee may enter the
+            tournament
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            The first matches will be randomized to determine which players will
+            face each other
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Coin toss will decide who starts on which side. The player in the
+            upper bracket slot chooses either heads or tails and the referee
+            performs the flip. The winner of the coin toss chooses if they want
+            to start white or black.
+            <ul
+              class="list-group list-group-flush list-group-numbered bg-transparent border-top mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                Each game alternates who is white or black, so if you played
+                white the first game you play black in the second and then white
+                in the third.
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            All games are 5+3 time format
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            All games are played in
+            <a href="https://lichess.org/" target="_blank">Lichess</a>
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            Player from the winning bracket will get one point advantage in the
+            finals
+          </li>
+          <li class="list-group-item bg-transparent border-dark">
+            All matches will be played in Best of 3, except the finals (counting
+            the bronze match) which will be played in Best of 5
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                This means that the losing players of the semi-finals will be
+                facing each other in the bronze match to determine the 3rd place
+                (this will not be seen in the bracket)
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                3rd place -- Bronze finals winner
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                2nd place -- Finals loser
+              </li>
+              <li class="list-group-item bg-transparent border-dark">
+                1st place -- Finals winner
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <h4>General rules:</h4>
+        <ul class="list-group list-group-flush list-group-numbered">
+          <li class="list-group-item bg-transparent border-dark">
+            You have the responsibility to invite the right opponent and play
+            the match
+            <ul
+              class="list-group list-group-flush list-group-numbered border-top border-dark mt-2"
+            >
+              <li class="list-group-item bg-transparent border-dark">
+                Both players have the responsibility to follow all the rules
+                stated in this document, contact the referee in case of conflict
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" data-bs-theme="dark" id="register">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- header -->
+        <div class="modal-header bg-custom">
+          <h4 class="modal-title text-light">Registration information</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-theme="dark"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+
+        <!-- body -->
+        <div class="modal-body bg-light">
+          <p>
+            Tournaments are planned to start the following times. Please note
+            that exact times may vary, depending on participation and potential
+            technical issues. The start of the tournament will be announced on
+            Discord as well as on Twitch.
+          </p>
+          <ul>
+            <li>Teamfight Tactics: 12/5 23:00</li>
+            <li>Chess: 13/5 10:00</li>
+            <li>League of Legends: 13/5 14:00</li>
+            <li>CS:GO: 13/5 22:00</li>
+          </ul>
+        </div>
+
+        <!-- footer -->
+        <div class="modal-footer bg-custom" style="background-color: #12182a">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

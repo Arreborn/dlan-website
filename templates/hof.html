@@ -1,0 +1,430 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+
+<div class="mt-2">
+  <h2 style="text-align: center">
+    <img
+      src="{% static 'img/h.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+    Hall of Fame
+    <img
+      src="{% static 'img/f.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+  </h2>
+  <hr />
+  <div class="text-center">
+    Här hyllar vi alla de lyckligt lottade vinnare som kammat hem förstaplatsen
+    i någon av D-LANs turneringar. <br />
+    Eller ja, här kommer vi att visa upp segrarna. När vi har segrare att visa
+    upp. Så efter D-LAN, typ.<br /><br />
+    Dessutom kan du här träffa på alla de som gjort D-LAN möjligt (och Luttu
+    också, för den delen).
+  </div>
+  <div>
+    <div class="text-center my-2">
+      <button
+        type="button"
+        class="btn btn-primary btn-block"
+        style="width: 100%"
+        data-bs-toggle="collapse"
+        data-bs-target="#dlan"
+      >
+        D-LAN 2023
+      </button>
+    </div>
+    <div class="collapse show" id="dlan">
+      <div class="row">
+        <!-- BATAN -->
+        <div class="col-lg-3 mb-2">
+          <div class="card h-100 bg-dark text-white">
+            <div class="px-2">
+              <img
+                class="card-img-top mx-auto mt-2 d-block img-fluid rounded"
+                src="{% static 'img/staff/batan.jpg' %}"
+                alt="Card image"
+              />
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h2 class="card-title diablo">Philip Batan</h2>
+                <h5 class="zelda">PROJEKTLEDARE</h5>
+              </div>
+              <hr />
+              <div class="d-grid">
+                <a
+                  type="button"
+                  class="btn btn-primary btn-block"
+                  href="mailto:projektledare@d-lan.se"
+                  >projektledare@d-lan.se</a
+                >
+              </div>
+              <hr />
+              <h6>Bananrulle</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-banana" style="width: 3%"></div>
+              </div>
+              <h6>Färgseende</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-primary" style="width: 0%"></div>
+              </div>
+              <hr />
+              <p class="card-text">
+                Chäf!<br />
+                Jag får ofta höra att jag ser arg ut, men så är det inte. Jag är
+                bara förbannad. Mitt favorit sociala media är e-post. Jag brukar
+                ha bäst koll på det mesta, men fram tills i år trodde jag att
+                mandelmassa var grönt.
+                <br />
+                <br />
+                Ingen HATAR bananrullar lika mycket som mig.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MARCUS -->
+        <div class="col-lg-3 mb-2">
+          <div class="card h-100 bg-dark text-white">
+            <div class="px-2">
+              <img
+                class="card-img-top mx-auto mt-2 d-block img-fluid rounded"
+                src="{% static 'img/staff/marcus.jpg' %}"
+                alt="Card image"
+              />
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h2 class="card-title diablo">Marcus Dahl</h2>
+                <h5 class="zelda">PERSONALWERK</h5>
+              </div>
+              <hr />
+              <div class="d-grid">
+                <a
+                  type="button"
+                  class="btn btn-primary btn-block"
+                  href="mailto:personalwerk@d-lan.se"
+                  >personalwerk@d-lan.se</a
+                >
+              </div>
+              <hr />
+              <h6>Bananrulle</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-banana" style="width: 100%"></div>
+              </div>
+              <h6>LoL-abstinens</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-red" style="width: 97%"></div>
+              </div>
+              <hr />
+              <p class="card-text">
+                Före detta LoL spelare, numera halvt fungerande person i
+                samhället. Även D-LANs alldeles egna personalWERK som inte
+                klarar av att hantera epost. (Sorry boss) <br /><br />
+                Bananrullens största missionär. Konverterat åtminstone ett
+                dussin bananrulle-hatare.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOVE -->
+        <div class="col-lg-3 mb-2">
+          <div class="card h-100 bg-dark text-white">
+            <div class="px-2">
+              <img
+                class="card-img-top mx-auto mt-2 d-block img-fluid rounded"
+                src="{% static 'img/staff/love.jpg' %}"
+                alt="Card image"
+              />
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h2 class="card-title diablo">Love Arreborn</h2>
+                <h5 class="zelda">WEBB & STREAM</h5>
+              </div>
+              <hr />
+              <div class="d-grid">
+                <a
+                  type="button"
+                  class="btn btn-primary btn-block"
+                  href="mailto:webb@d-lan.se"
+                  >webb@d-lan.se</a
+                >
+              </div>
+              <hr />
+              <h6>Bananrulle</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-banana" style="width: 5%"></div>
+              </div>
+              <h6>Kvarvarande tålamod</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-blue" style="width: 12%"></div>
+              </div>
+              <hr />
+              <p class="card-text">
+                Skulle jag beskriva mig själv med fem ord skulle jag helst låta
+                bli. Halva mitt jobb görs av ChatGPT, andra halvan försöker jag
+                delegera till resten av D-LAN. Bidrar utöver det med snorkiga
+                kommentarer och dåliga memes som är förlegade sedan länge.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EMELIE -->
+        <div class="col-lg-3 mb-2">
+          <div class="card h-100 bg-dark text-white">
+            <div class="px-2">
+              <img
+                class="card-img-top mx-auto mt-2 d-block img-fluid rounded"
+                src="{% static 'img/staff/emelie.jpg' %}"
+                alt="Card image"
+              />
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h2 class="card-title diablo">Emelie Gustavsson</h2>
+                <h5 class="zelda">SPONS & EVENT</h5>
+              </div>
+              <hr />
+              <div class="d-grid">
+                <a
+                  type="button"
+                  class="btn btn-primary btn-block"
+                  href="mailto:spons@d-lan.se"
+                  >spons@d-lan.se</a
+                >
+              </div>
+              <hr />
+              <h6>Bananrulle</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-banana" style="width: 100%"></div>
+              </div>
+              <h6>OnlyFans sub-goal</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-purple" style="width: 76%"></div>
+              </div>
+              <hr />
+              <p class="card-text">
+                Som inkvoterad tjej har jag inte mycket att bidra med. Jag är
+                inte bra på spel och kan inga memes. Det enda jag har att
+                erbjuda är nog min
+                <a
+                  href="http://bitly.ws/3Vy7"
+                  class="text-danger"
+                  target="_BLANK"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Tack för att du sponsrar D-LAN <3"
+                  >OnlyFans</a
+                >...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OLLE -->
+      <div class="row">
+        <div class="col-lg-3 mb-2">
+          <div class="card h-100 bg-dark text-white">
+            <div class="px-2">
+              <img
+                class="card-img-top mx-auto mt-2 d-block img-fluid rounded"
+                src="{% static 'img/staff/olle.jpg' %}"
+                alt="Card image"
+              />
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h2 class="card-title diablo">Olle Mineur</h2>
+                <h5 class="zelda">ELWERK</h5>
+              </div>
+              <hr />
+              <div class="d-grid">
+                <a
+                  type="button"
+                  class="btn btn-primary btn-block"
+                  href="mailto:elwerk@d-lan.se"
+                  >elwerk@d-lan.se</a
+                >
+              </div>
+              <hr />
+              <h6>Bananrulle</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-banana" style="width: 80%"></div>
+              </div>
+              <h6>Oskarshamn</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-green" style="width: 100%"></div>
+              </div>
+              <hr />
+              <p class="card-text">
+                Vissa säger att jag är en god lyssnare, men känner själv att jag
+                har en hörselnedsättning. Annars så jobbar jag som
+                Discord-moderator på halvtid, samtidigt som jag pluggar. Men nu,
+                en ordvits: Vem är Oskar och var ligger hans hamn? I Oskarshamn!
+                Vet inte vem Oskar är, för jag är Olle.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOBBE -->
+        <div class="col-lg-3 mb-2">
+          <div class="card h-100 bg-dark text-white">
+            <div class="px-2">
+              <img
+                class="card-img-top mx-auto mt-2 d-block img-fluid rounded"
+                src="{% static 'img/staff/tobbe.jpg' %}"
+                alt="Card image"
+              />
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h2 class="card-title diablo">Tobias Elfstrand</h2>
+                <h5 class="zelda">TURNERING & BILJETT</h5>
+              </div>
+              <hr />
+              <div class="d-grid">
+                <a
+                  type="button"
+                  class="btn btn-primary btn-block"
+                  href="mailto:turnering@d-lan.se"
+                  >turnering@d-lan.se</a
+                >
+              </div>
+              <hr />
+              <h6>Bananrulle</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-banana" style="width: 78%"></div>
+              </div>
+              <h6>K/D ratio i Stardew Valley</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-teal" style="width: 62%"></div>
+              </div>
+              <hr />
+              <p class="card-text">
+                Avdankad CS:GO-spelare. Numera blir det spel som kräver mer
+                skicklighet som Stardew Valley och TFT. Älskar allt som har med
+                biljetter och turneringar att göra! Men mest av allt har jag
+                fått en nyfunnen förkärlek till bananrullar.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ERIK -->
+        <div class="col-lg-3 mb-2">
+          <div class="card h-100 bg-dark text-white">
+            <div class="px-2">
+              <img
+                class="card-img-top mx-auto mt-2 d-block img-fluid rounded"
+                src="{% static 'img/staff/erik.jpg' %}"
+                alt="Card image"
+              />
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h2 class="card-title diablo">Erik Luttu</h2>
+                <h5 class="zelda">NÄT</h5>
+              </div>
+              <hr />
+              <div class="d-grid">
+                <a
+                  type="button"
+                  class="btn btn-primary btn-block"
+                  href="mailto:nat@d-lan.se"
+                  >nat@d-lan.se</a
+                >
+              </div>
+              <hr />
+              <h6>Bananrulle</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-banana" style="width: 100%"></div>
+              </div>
+              <h6>Olles kitten</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-pink" style="width: 100%"></div>
+              </div>
+              <hr />
+              <p class="card-text">
+                Sjukt stilig, fråga bara din morsa. Blev kallad en blind jävel
+                av min optiker. Bananrullens urfader och ledare till vår
+                frälsning.
+                <br />
+                <br />
+                "<span style="font-style: italic"
+                  >Visar du bananrullen kärlek, är det kärlek du ska få
+                  åter.</span
+                >"
+                <br />
+                - Luttus protevangelium 13:37
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GIGACHAD -->
+        <div class="col-lg-3 mb-2">
+          <div class="card h-100 bg-dark text-white">
+            <div class="px-2">
+              <img
+                class="card-img-top mx-auto mt-2 d-block img-fluid rounded"
+                src="{% static 'img/staff/masterbanan.jpg' %}"
+                alt="Card image"
+              />
+            </div>
+            <div class="card-body">
+              <div class="text-center">
+                <h2 class="card-title diablo">Lord Bananrulle</h2>
+                <h5 class="zelda">OFFICIELL MASKOT</h5>
+              </div>
+              <hr />
+              <div class="d-grid">
+                <a
+                  type="button"
+                  class="btn btn-primary btn-block"
+                  href="mailto:pr@d-lan.se"
+                  >pr@d-lan.se</a
+                >
+              </div>
+              <hr />
+              <h6>Bananrulle</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-banana" style="width: 100%"></div>
+              </div>
+              <h6>Gudastatus</h6>
+              <div class="progress mb-2">
+                <div class="progress-bar bg-orange" style="width: 100%"></div>
+              </div>
+              <hr />
+              <p class="card-text">
+                Innan universum, då fanns det blott en sak. Ur intet, utifrån
+                ett kosmiskt sammanträffade, så imploderade ingenting för att
+                bli allting. Från inget kom allt - från bananrullen kom livet.
+                <br />
+                <br />
+                Vi har bananrullen att tacka för allt. Prisa bananrullen. Dyrka
+                bananrullen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary btn-block mb-2"
+        style="width: 100%"
+        data-bs-toggle="collapse"
+        data-bs-target="#dlan"
+      >
+        Stäng
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

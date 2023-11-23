@@ -1,0 +1,178 @@
+@font-face {
+  font-family: diablo;
+  src: url(../font/diablo.ttf)
+}
+
+@font-face {
+  font-family: zelda;
+  src: url(../font/zelda.ttf);
+}
+
+@font-face {
+  font-family: dlan;
+  src: url(../font/bahnschrift.ttf);
+}
+
+body{
+  font-family: dlan !important;
+}
+
+.progress {
+  background-color: #6d6d6d !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.bg-primary {
+  background-color: #12182A !important;
+}
+
+.btn-secondary {
+  border-color: #2BB9D3 !important;
+  background-color: #2BB9D3 !important;
+  color: #12182A !important
+}
+
+.btn:hover {
+  border-color: #2BB9D3 !important;
+  background-color: #2BB9D3 !important;
+  color: #12182A !important;
+}
+
+.btn-secondary:hover {
+  border-color: #12182A !important;
+  background-color: #12182A !important;
+  color: white !important;
+}
+
+.btn-danger:hover {
+  border-color: #ff0000 !important;
+  background-color: #ff0000 !important;
+}
+
+.different-hover:hover {
+  border-color: rgba(127, 17, 224, 0) !important;
+  background-color: #495057 !important;
+  color: white !important;
+}
+
+.collapse-pad {
+  margin-left: 4px;
+  padding-left: 6px !important;
+  border-left: 4px solid #12182A !important;
+}
+
+.bottom-border {
+  padding-bottom: 6px !important;
+  border-bottom: 4px solid #12182A !important;
+}
+
+.collapse-pad-r {
+    margin-right: 4px;
+    padding-right: 6px !important;
+    border-right: 4px solid #12182A !important;
+}
+
+.sticky-img {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 7em;
+}
+
+.bg-custom {
+  background-color: #12182A !important;
+}
+
+.bg-banana {
+  background-color: #b8b949 !important;
+}
+
+.bg-red {
+  background-color: #700000 !important;
+}
+
+.bg-purple {
+  background-color: #5d2e7c !important;
+}
+
+.bg-blue {
+  background-color: #2a2caf !important;
+}
+
+.bg-pink {
+  background-color: #8642a5 !important;
+}
+
+.bg-green {
+  background-color: #234622 !important;
+}
+
+.bg-teal {
+  background-color: #44a1d6 !important;
+}
+
+.bg-orange {
+  background-color: #ad7f4a !important;
+}
+
+.bg-opacity {
+  background-color: rgba(18, 24, 42, 0.4) !important;
+}
+
+.diablo{
+  font-family: diablo;
+}
+
+.zelda{
+  font-family: zelda;
+}
+
+.bottom{
+  position: absolute;
+  bottom: 0;
+}
+
+body{
+  background-color: #12182A !important;
+  background-image: url(img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.popup{
+  background-color: #12182A;
+  background-image: url(img/bg.png) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+article {
+  border-left: 1px solid #14080E;
+  border-right: 1px solid #14080E;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding-top: 1em;
+  font-size: 1.4em;
+  z-index: 2;
+  overflow: auto;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.border-color {
+  border-color: #12182A !important;
+}
+
+.text-danger:link {
+  color: #D100D1 !important;
+}
+
+.text-danger:visited {
+  color: #D100D1 !important;
+}
+

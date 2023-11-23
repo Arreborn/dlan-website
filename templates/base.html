@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="D-Sektionens eminenta LAN-event!" />
+    <link rel="shortcut icon" href="{% static 'img/d.png' %}" />
+    <link
+      href="{% static 'css/colors.css' %}"
+      rel="stylesheet"
+      ,
+      type="text/css"
+    />
+    <link
+      href="{% static 'css/bootstrap.min.css' %}"
+      rel="stylesheet"
+      ,
+      type="text/css"
+    />
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <title>D-LAN 2023</title>
+    {% block header %} {% endblock %}
+  </head>
+  <body>
+    {% block index %} {% endblock %}
+    <nav
+      class="navbar navbar-expand-sm navbar-dark sticky-top bg-custom"
+      id="nav"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="{% static 'img/logo.png' %}"
+            width="101"
+            height="60"
+            class="d-inline-block align-top"
+            alt=""
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li
+              class="nav-item"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Information om D-LAN!"
+            >
+              <a class="nav-link" href="/information">Information</a>
+            </li>
+            <li
+              class="nav-item"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Information och sign-up till turneringar!"
+            >
+              <a class="nav-link" href="/tournament">Turneringar</a>
+            </li>
+            <li
+              class="nav-item"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Köp biljetter till D-LAN!"
+            >
+              <!--
+              För modal trigger när biljetter inte ska säljas mer, lägg till i länken nedan:
+              data-bs-toggle="modal"
+              data-bs-target="#noticket"
+            -->
+              <a class="nav-link" href="/tickets/">Biljetter</a>
+            </li>
+            <li
+              class="nav-item"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Träffa D-LANs crew och f.d. turneringsvinnare!"
+            >
+              <a class="nav-link" href="/hall-of-fame">Hall of Fame</a>
+            </li>
+            <li
+              class="nav-item"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Världens bästa Discord-server?"
+            >
+              <a
+                class="nav-link"
+                href="https://discord.gg/dCz3mfMXCa"
+                target="_blank"
+                class="dropdown-item"
+                >Discord</a
+              >
+            </li>
+            <li
+              class="nav-item"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Så att även boomers är inkluderade."
+            >
+              <a
+                class="nav-link"
+                href="https://www.facebook.com/DLANLiTH"
+                target="_blank"
+                class="dropdown-item"
+                >Facebook</a
+              >
+            </li>
+            <li
+              class="nav-item"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              title="Så klart streamar vi hela LANet!"
+            >
+              <a
+                class="nav-link"
+                href="https://www.twitch.tv/dlan_liu"
+                target="_blank"
+                class="dropdown-item"
+                >Twitch</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="container h-auto bg-light pt-2 border-end border-start border-secondary pb-5"
+      style="--bs-bg-opacity: 0.7; min-height: 90vh"
+    >
+      {% block body %} {% endblock %}
+    </div>
+
+    <div
+      class="container-fluid fixed-bottom bg-custom my-0 text-white"
+      style="text-align: center"
+    >
+      <div class="carousel slide" data-bs-ride="carousel" id="spons">
+        <div class="carousel-inner my-2">
+          <div class="carousel-item">
+            <a href="https://webhallen.com/" target="_blank">
+              <img
+                src="{% static 'img/spons/webhallen.png' %}"
+                style="height: 2em"
+              />
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://sectra.com/" target="_blank">
+              <img
+                src="{% static 'img/spons/sectra.png' %}"
+                style="height: 2em"
+              />
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://vrgaming.se/" target="_blank">
+              <img
+                src="{% static 'img/spons/vrgaming.png' %}"
+                style="height: 2em"
+              />
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://idainfront.se" target="_blank">
+              <img
+                src="{% static 'img/spons/idainfront.png' %}"
+                style="height: 2em"
+              />
+            </a>
+          </div>
+          <div class="carousel-item">
+            <a href="https://qte.se" target="_blank">
+              <img src="{% static 'img/spons/qte.png' %}" style="height: 2em" />
+            </a>
+          </div>
+          <div class="carousel-item active">
+            <a href="https://www.configura.com/" target="_blank">
+              <img
+                src="{% static 'img/spons/configura.png' %}"
+                style="height: 2em"
+              />
+            </a>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#spons"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#spons"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Popup vid biijettköpsförsök -->
+    <div class="modal fade" data-bs-theme="dark" id="noticket">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-custom">
+            <h4 class="modal-title text-light">
+              Biljettförsäljningen är slut för i år!
+            </h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-theme="dark"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body bg-light">
+            <p>
+              Vi har slutat sälja biljetter till LANet för i år! Men vill du
+              vara med en dag på LANet ändå så kan du köpa en endagsbiljett för
+              att besöka oss när du kommer till Terra. Den kostar så lite som 25
+              kronor, och det blir mycket kul för de pengarna!
+            </p>
+            <img
+              src="{% static 'img/really.gif' %}"
+              class="mx-auto d-block ratio"
+              style="padding-top: 1em"
+            />
+          </div>
+
+          <div class="modal-footer bg-custom" style="background-color: #12182a">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              :sadpepe:
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  </script>
+</html>

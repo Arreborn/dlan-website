@@ -1,0 +1,524 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+<script src="https://js.stripe.com/v3/"></script>
+
+<div>
+  <h2 style="text-align: center" class="mt-2">
+    <img
+      src="{% static 'img/b.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+    Biljettköp
+    <img
+      src="{% static 'img/b.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+  </h2>
+  <hr />
+  <div class="row">
+    <div class="col-lg-6">
+      <!-- FAQ collapsable root -->
+      <div id="faq">
+        <a
+          class="btn btn-primary mb-2"
+          data-bs-toggle="collapse"
+          href="#info_tickets"
+          style="width: 100%"
+        >
+          <h4 class="m-0">Prislista</h4>
+        </a>
+        <div id="info_tickets" class="collapse show" data-bs-parent="#faq">
+          <div class="collapse-pad">
+            <h5>Entré - 25 kr</h5>
+            <p>
+              Köps på plats vid entrén, om du vill in och hänga på D-LAN utan en
+              egen datorplats!
+            </p>
+            <p>
+              Du får tillgång till LANet och möjligheten att delta i våra mindre
+              tävlingar och events (till exempel våra sponsorers turneringar och
+              events) samt åtkomst till kiosken. Du kan inte delta i någon av
+              <a href="/tournament/" class="text-danger"
+                >D-LANs egna turneringar</a
+              >
+              om du endast har en entrébiljett, samt att vi inte tillåter att du
+              hugger en ledig datorplats och spelar ändå.
+            </p>
+
+            <h5>Datorplats - 90 kr</h5>
+            <p>
+              En bordsplats på D-LAN, här ingår även entré. Du får tillgång till
+              samtliga event och turneringar om du har en datorplats. Du kommer
+              även att få möjligheten att delta i
+              <a href="/tournament/" class="text-danger"
+                >D-LANs egna turneringar</a
+              >. Vill du anmäla dig till Teamfight Tactics eller schack får du
+              mer info i din orderbekräftelse. För att anmäla ett lag till LoL
+              eller CS:GO-turneringarna finns det mer information på länken.
+            </p>
+
+            <h5>Datorskjuts - 50 kr</h5>
+            <p>
+              Skjuts av utrustningen från utvalda orter till LANet, och
+              kombineras med en bokning av datorplats. Mer information om detta
+              har vi petat in i en egen meny här nedan.
+            </p>
+          </div>
+        </div>
+
+        <a
+          class="btn btn-primary mb-2"
+          data-bs-toggle="collapse"
+          href="#info_pricing"
+          style="width: 100%"
+        >
+          <h4 class="m-0">Information och villkor</h4>
+        </a>
+        <div id="info_pricing" class="collapse" data-bs-parent="#faq">
+          <div class="collapse-pad">
+            <p>
+              Under biljettförsäljningen kan varje student köpa upp till två
+              biljetter. Det går även bra att köpa en biljett till någon som
+              inte är en student. Köper man två biljetter tillsammans så kommer
+              vi placera dessa sittplatser bredvid varandra*.
+            </p>
+            <p>
+              Vid din beställning kommer du att få ett ordernummer. Uppge ditt
+              ordernummer eller LiU-ID när du ska gå in på LANet, så pekar vi
+              dig till rätt plats. Har du köpt biljett åt någon annan (som
+              kanske inte är student och har noll koll på vad ett LiU-ID är), se
+              till att de har ditt ordernummer så att de kan uppge det i entrén.
+            </p>
+            <p>
+              Har du fler vänner som du vill sitta nära under LANet så kan ni
+              gemensamt komma överens om ett gruppnamn. Vi kommer att placera
+              alla deltagare med samma gruppnamn i nära anslutning till
+              varandra. Väl på plats så är det möjligt att byta din datorplats
+              om det verkligen behövs. Det är fritt att byta två platser mellan
+              två deltagare, men har du fått en plats som absolut inte fungerar
+              för dig på LANet, kontakta någon i personalen så hjälper vi dig.
+            </p>
+            <p>
+              Genomförda köp är bindande. D-LAN erbjuder inte återköp eller
+              ångerrätt. Medan endast två datorplatser kan köpas per LiU-ID så
+              är dessa inte personliga. Biljetter kan säljas vidare vid behov,
+              och köparen behöver då ange det knutna ordernumret vid köpet. Har
+              en biljett sålts behöver köparen svara på mailet där de fick sitt
+              kvitto om att biljetten har sålts.
+            </p>
+          </div>
+        </div>
+        <a
+          class="btn btn-primary mb-2"
+          data-bs-toggle="collapse"
+          href="#info_service"
+          style="width: 100%"
+        >
+          <h4 class="m-0">Information om datorskjuts</h4>
+        </a>
+        <div id="info_service" class="collapse" data-bs-parent="#faq">
+          <div class="collapse-pad">
+            <p>
+              D-LAN 2023 erbjuder datorskjuts. Ansvaret över utrustningen ligger
+              på deltagarna, det vill säga att ni packar er utrustning själva
+              och ansvarar för att det är säkert! Vi ansvarar därför
+              <span
+                class="text-danger"
+                style="text-weight: bold; text-decoration: underline"
+                >inte</span
+              >
+              för skador som kan uppkomma på grund av bristande förvaring /
+              förpackning av utrustning.
+            </p>
+            <p>Bra att tänka på vid packning av datorutrustning:</p>
+            <ul>
+              <li>
+                Svep gärna in skärmar/datorer i något mjukt (exempelvis
+                handduk).
+              </li>
+              <li>
+                Använd en bra förpackning, förslagsvis en flyttlåda, att placera
+                utrustningen i. Här kan ni även medföra tangentbord, datormus,
+                sladdar etc.
+              </li>
+              <li>
+                Markera tydligt upp lådan eller utrustningen med namn och
+                LiU-ID.
+              </li>
+            </ul>
+            <p>
+              D-LAN erbjuder datorskjuts från de områden som markerats på kartan
+              nedan. Klicka på kartan för att se exakt plats och tid för varje
+              individuell plats. Tiderna är preliminära och kan komma att
+              ändras. Skulle tiderna ändras kommer de påverkade kontaktas via
+              den e-postadress som angivits vid biljettköp.
+            </p>
+            <p class="mb-2">
+              <a
+                href="https://www.google.com/maps/d/u/0/viewer?mid=1dH_zaJt_mzFmDWrqitFc0-8xwm8-LZc&ll=58.40690030852366%2C15.583585906776225&z=13"
+                target="_blank"
+                ><img
+                  src="{% static 'img/karta.png' %}"
+                  style="width: 100%"
+                  class="border border-dark"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="right"
+                  title="Klicka på kartan för att få en bättre överblick kring vart vi stannar och vilka tider."
+              /></a>
+            </p>
+            <p>
+              Det är viktigt att du är redo med din utrustning på angiven plats
+              när vi väl kommer för att hinna med samtliga upphämtningar.
+            </p>
+            <p class="mb-2">
+              Om du bor någon annanstans än tidigare nämnda områden och önskar
+              datorskjuts går det bra att hör av sig till
+              <a href="mailto:projektledare@d-lan.se" class="text-danger"
+                >projektledare@d-lan.se</a
+              >
+              så ser vi om det går att lösa.
+            </p>
+          </div>
+        </div>
+        <a
+          class="btn btn-primary mb-3"
+          data-bs-toggle="modal"
+          data-bs-target="#gdpr_info"
+          style="width: 100%"
+        >
+          <h4 class="m-0">Personuppgiftshantering</h4>
+        </a>
+      </div>
+    </div>
+    <form class="col-lg-6">
+      <div style="m-auto">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group mb-3">
+              <div class="input-group-text" id="fname_tag">Förnamn</div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Ditt förnamn"
+                name="fname"
+                id="fname"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="input-group mb-3">
+              <div class="input-group-text" id="lname_tag">Efternamn</div>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Ditt efternamn"
+                name="lname"
+                id="lname"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="m-auto">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group mb-3">
+              <div class="input-group-text" id="liuid_tag">LiU-ID</div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="ex. dylan069"
+                name="liuid"
+                id="liuid"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="input-group mb-3">
+              <div class="input-group-text" id="email_tag">E-post</div>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Din privata e-post"
+                name="email"
+                id="email"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="input-group mb-3">
+              <div class="input-group-text">Gruppnamn</div>
+              <input
+                type="number /"
+                class="form-control"
+                placeholder="ex. Bananrullegänget"
+                name="groupname"
+                id="groupname"
+              />
+              <div class="input-group-append">
+                <a
+                  href="blank"
+                  class="btn bg-light rounded-0 rounded-end border-start different-hover"
+                  data-bs-toggle="modal"
+                  data-bs-target="#groupname_info"
+                  >?</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3 col input-group">
+            <div class="input-group-text" id="main_ticket_tag">Biljett 1</div>
+            <select class="form-select" id="main_ticket">
+              <option disabled selected value="0">Välj biljettyp här</option>
+              <option value="1">Endast datorplats (90 kr)</option>
+              <option value="2">Datorplats och datorskjuts (140 kr)</option>
+            </select>
+          </div>
+        </div>
+        <div class="row collapse hide" id="phone_no_1">
+          <div class="col">
+            <div class="input-group mb-3">
+              <div class="input-group-text" id="phone1_tag">
+                Biljett 1: Telefonnummer
+              </div>
+              <input
+                type="number /"
+                class="form-control"
+                placeholder="ex. 0704206969"
+                name="phone1"
+                id="phone1"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="collapse hide" id="second_ticket">
+          <div class="row">
+            <div class="mb-3 col input-group">
+              <div class="input-group-text" id="secondary_ticket_tag">
+                Biljett 2
+              </div>
+              <select class="form-select" id="secondary_ticket">
+                <option disabled selected value="0">Välj biljettyp här</option>
+                <option value="1">Endast datorplats (90 kr)</option>
+                <option value="2">Datorplats och datorskjuts (140 kr)</option>
+              </select>
+            </div>
+          </div>
+          <div class="row collapse hide" id="phone_no_2">
+            <div class="col">
+              <div class="input-group mb-3">
+                <div class="input-group-text" id="phone2_tag">
+                  Biljett 2: Telefonnummer
+                </div>
+                <input
+                  type="number /"
+                  class="form-control"
+                  placeholder="ex. 0704206969"
+                  name="phone2"
+                  id="phone2"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-check form-switch col-6-lg">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="enable_second_ticket"
+            data-bs-toggle="collapse"
+            data-bs-target="#second_ticket"
+          />
+          <label class="form-check-label pb-2" for="enable_second_ticket"
+            >Jag vill köpa två biljetter!</label
+          >
+        </div>
+        <div class="pt-1 text-center">
+          <button
+            id="checkout_button"
+            class="btn bg-custom disabled"
+            type="button"
+            style="width: 100%"
+          >
+            <h5 class="pt-1" style="color: white" id="sum_total">
+              Inga biljetter i varukorgen
+            </h5>
+          </button>
+        </div>
+        <div class="form-check form-switch col-6-lg pt-2">
+          <input class="form-check-input" type="checkbox" id="gdpr_check" />
+          <label class="form-check-label pb-2" for="gdpr_check"
+            >Jag godkänner att D-LAN lagrar mina personuppgifter -
+            <a
+              href="blank"
+              data-bs-toggle="modal"
+              data-bs-target="#gdpr_info"
+              class="text-danger"
+              >läs mer om detta här</a
+            >!
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="{% static 'js/ticket.js' %}"></script>
+
+<div class="modal fade" data-bs-theme="dark" id="groupname_info">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- header -->
+      <div class="modal-header bg-custom">
+        <h4 class="modal-title text-light">Gruppnamn</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-theme="dark"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <!-- body -->
+      <div class="modal-body bg-light">
+        <p>
+          När du bokar en plats på D-LAN 2023 kommer vi att dela ut de platser
+          som du bokat efter bästa förmåga, då vi behöver ta höjd för placering
+          av lag som deltar i turneringar och lite annat smått och gott. När du
+          bokar två biljetter i samma beställning kommer bägge dessa platser att
+          läggas bredvid varandra - så det behöver ni inte tänka på.
+        </p>
+        <p>
+          Men om du vill sitta nära dina vänner som bokar egna biljetter behöver
+          ni komma överens om ett gruppnamn. Alla bokningar med samma gruppnamn
+          kommer vi att göra vårt yttersta för att placera nära varandra.
+        </p>
+        <p>
+          Ska du delta i en turnering är det av stor vikt att alla deltagare i
+          turneringen anger sitt lagnamn som gruppnamn.
+        </p>
+        <p>
+          Är det sedan så att du vill byta plats under LANet så är det fritt att
+          byta med andra deltagare på LANet (förutom turneringsdeltagare, som
+          måste stanna på sina utdelade platser). Är det så att du behöver byta
+          men inte hittar någon att byta med, kontakta någon från personalen
+          eller skriv till oss på Discord, så hjälper vi till.
+        </p>
+      </div>
+
+      <!-- footer -->
+      <div class="modal-footer bg-custom" style="background-color: #12182a">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Stäng
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" data-bs-theme="dark" id="gdpr_info">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- header -->
+      <div class="modal-header bg-custom">
+        <h4 class="modal-title text-light">Personuppgiftshantering</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-theme="dark"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <!-- body -->
+      <div class="modal-body bg-light">
+        <p>
+          Infon som anges i formuläret sparas tills den 15/5 och raderas sedan.
+          LiU-ID, e-post och namn samlas in för att hantera bokningen.
+          Telefonnummer samlas in för kontakt vid datorskjuts. Samtycke för att
+          lagra dessa biljettuppgifter krävs vid biljettköp.
+        </p>
+        <p>
+          D-LAN använder sig av betalningsleverantören Stripe. Vid ett köp av
+          biljett kommer Stripe att samla in relevant information för att
+          möjliggöra köpet. Läs mer om Stripes personuppgiftshantering
+          <a
+            href="https://stripe.com/en-gb-se/legal/privacy-center"
+            target="_blank"
+            class="text-danger"
+            >på denna länk</a
+          >.
+        </p>
+        <p>
+          För registerutdrag samt frågor gällande hantering av personuppgifter i
+          enlighet med GDPR, alternativt frågor om biljettköp via webben:
+          <a href="mailto:webb@d-lan.se" class="text-danger">webb@d-lan.se</a>
+        </p>
+        <p>
+          Biljettfrågor (som inte berör biljettköp via webben):
+          <a href="mailto:biljett@d-lan.se" class="text-danger"
+            >biljett@d-lan.se</a
+          >
+        </p>
+        <p>
+          Övriga frågor gällande D-LAN:
+          <a href="mailto:projektledare@d-lan.se" class="text-danger"
+            >projektledare@d-lan.se</a
+          >
+        </p>
+      </div>
+
+      <!-- footer -->
+      <div class="modal-footer bg-custom" style="background-color: #12182a">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Stäng
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" data-bs-theme="dark" id="validation_error">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- header -->
+      <div class="modal-header bg-custom">
+        <h4 class="modal-title text-light">Fel i beställningsformuläret!</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-theme="dark"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <!-- body -->
+      <div class="modal-body bg-light">
+        <p>
+          Något verkar ha gått lite snett här. Det finns lite fel i formuläret
+          som du behöver rätta till:
+        </p>
+        <div id="error_body"></div>
+        <p>
+          Om du misstänker att någonting här har gått snett, skicka ett mail
+          till <a href="mailto:webb@d-lan.se">webb@d-lan.se</a> med all
+          information du angav i beställningen (gärna en skärmdump också), så
+          kikar vi på vad som hänt.
+        </p>
+      </div>
+
+      <!-- footer -->
+      <div class="modal-footer bg-custom" style="background-color: #12182a">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Stäng
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

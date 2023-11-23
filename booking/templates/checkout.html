@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+<div>
+  <h2 style="text-align: center" class="mt-2">
+    <img
+      src="{% static 'img/d.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+    Tack för ditt köp!
+    <img
+      src="{% static 'img/d.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+  </h2>
+  <hr />
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <img
+      src="{% static 'img/checkout.jpg' %}"
+      style="width: 100%"
+      class="border border-dark"
+    />
+  </div>
+  <div class="col-lg-6">
+    <table class="table table-hover" data-bs-theme="dark">
+      <tr>
+        <th class="text-dark">Din order:</th>
+        <th></th>
+      </tr>
+      {% for detail in order_details %}
+      <tr>
+        <th class="text-dark">{{ detail.0 }}:</th>
+        <th class="text-dark">{{ detail.1 }}</th>
+      </tr>
+      {% endfor %}
+    </table>
+    <p>
+      Ett kvitto på ditt köp har skickats till din e-post. Kolla gärna din
+      skräppost om du inte mottagit något. Du kan nu även registrera dig för två
+      turneringar om du vill - Teamfight Tactics och schack! Du kan anmäla dig
+      <a href="https://forms.gle/mZ2MYkzbLmhMgM1G6" class="text-danger"
+        >på denna länk</a
+      >. Mer information om turneringarna hittar du
+      <a href="/tournament/" target="_blank" class="text-danger"
+        >på den här länken istället</a
+      >.
+    </p>
+    <p>
+      Vid inträde till D-LAN 2023 kommer vi att be om ditt ordernummer i första
+      hand för att ge dig ditt sätesnummer. Se till att ha det tillgängligt när
+      du ska gå in på LANet.
+    </p>
+  </div>
+</div>
+
+{% endblock %}

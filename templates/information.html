@@ -1,0 +1,555 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+<div>
+  <h2 style="text-align: center" class="mt-2">
+    <img
+      src="{% static 'img/i.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+    Information
+    <img
+      src="{% static 'img/i.png' %}"
+      style="height: 2em; width: 2em"
+      class="mx-2"
+    />
+  </h2>
+  <hr />
+</div>
+<div class="row">
+  <div class="col-md-6 text-center pb-2">
+    <img
+      class="sticky-img pb-1"
+      src="{% static 'img/poster.png' %}"
+      style="width: 90%"
+    />
+  </div>
+  <div class="col-md-6">
+    <!-- FAQ collapsable root -->
+    <div id="faq" class="mt-1">
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqDLAN"
+        style="width: 100%"
+      >
+        <h4 class="m-0">D-LAN - 12/05 - 14/05</h4>
+      </a>
+      <div id="faqDLAN" class="collapse show" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <ul>
+            <li>Start: 2023-05-12 kl. 21:00</li>
+            <li>Slut: 2023-05-14 kl. 10:00</li>
+            <li>Plats: Terra</li>
+            <li>
+              Prislista:<br />
+              Biljett utan datorplats: 25 kr - Köps vid entrén om du vill in och
+              njuta utan att ha en egen datorplats<br />
+              Biljett med datorplats: 90 kr - För epic gamers som vill ha med
+              sig riggen<br />
+              Datorskjuts: 50 kr - För alla gigachads som vill ha
+              VIP-treatment<br />
+            </li>
+          </ul>
+          {% comment %}
+          <p>
+            <a href="/tickets/" class="text-danger">Köp din biljett idag!</a>
+          </p>
+          {% endcomment %}
+          <p>
+            D-LAN is running it back to back med faktiskt FYSISKT LAN i Terra,
+            och detta års iteration kommer att göra så att allting annat ser ut
+            som en envarre-föreläsning.
+          </p>
+          <p>
+            Vi SLÅR upp dörrarna till terra för D-LAN på fredagen den 12/05 och
+            vi SLÄNGER igen dom på söndagen den 14/05 kl 10:00, så under den
+            perioden är du mycket välkommen (så länge du har betalat oss 😠)
+          </p>
+          <p>
+            Du kan förvänta dig en legendarisk helg fylld med gaming, tävlingar
+            och aktiviteter. Främst består LANet av 4 stora turneringar, med en
+            total prispott för turneringarna på dryga 20 000 kr. De turneringar
+            som äger rum under D-LAN är CS:GO, League of Legends, Teamfight
+            Tactics och schack. Se
+            <a href="/tournament/" class="text-danger">turneringar</a> för mer
+            information.
+          </p>
+          <p>
+            Även om du inte är typen som vill spela så har vi en massa events
+            som inte kräver att du har en gigantisk dator, utan du kan komma hit
+            och snacka Eurovision med SchlagU, testa på VR-spel med VRGaming
+            eller någon av alla andra fantastiska upplevelser som D-LAN har att
+            erbjuda.
+          </p>
+          <p>
+            För att ni alla ska hålla er APM på topp så har vi självklart en
+            kiosk där vi säljer allt från energidryck till frysmat, fika och
+            snacks.
+          </p>
+          <p class="mb-2">
+            Ni som inte är med på turneringar har möjlighet att vinna grymma
+            priser, bland annat ett helt eget VR-headset (inte ens clickbait,
+            det är ett legit pris). Är det så att du bara vill komma och hänga
+            en av dagarna så går det självklart bra att köpa endast en
+            entrébiljett utan en datorplats - du får så klart ändå vara med på
+            alla event på plats ändå!
+          </p>
+        </div>
+      </div>
+
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqDLAN-RULES"
+        style="width: 100%"
+      >
+        <h4 class="m-0">Ordningsregler under D-LAN</h4>
+      </a>
+      <div id="faqDLAN-RULES" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p>
+            Nu är vi alla vuxna människor (allegedly...) men så att vi kan se
+            till att alla kan ha lika kul så har vi lite grundregler för LANet.
+            Bryter du mot någon av dessa regler förbehåller sig D-LAN rätten att
+            avvisa dig från lokalen.
+          </p>
+          <ul>
+            <li>Ingen torrenting</li>
+            <li>
+              Uppför dig väl mot andra deltagare, vi alla är här för att ha kul
+              (förutom de som frivilligt torterar sig själva genom att spela
+              LoL)
+            </li>
+            <li>Ingen alkohol får förtäras under LANet</li>
+            <li>Inget grovt stötande material på dina skärmar</li>
+            <li>Ingen form av aktivitet som kan skada D-LANs nätverk</li>
+            <li>Läs igenom reglerna för vår Discord, och följ även dessa</li>
+          </ul>
+          <p>
+            Nu är detta inte 1987, så förutsatt att ditt regelbrott inte är ett
+            medvetet beslut med avsikt att skada, stöta eller allmänt vara
+            jobbig så ger vi dig en varning. Fortsätter beteendet trots detta så
+            kommer du att avvisas från lokalen.
+          </p>
+          <p class="mb-2">
+            Upplever du att någon beter sig olämpligt på LANet (vare sig genom
+            ett brott mot reglerna ovan eller genom någon annan typ av stötande
+            beteende) meddela personal - antingen på plats eller genom ett DM
+            till någon i gruppen @D-LAN 2023 på vår Discord.
+          </p>
+        </div>
+      </div>
+
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqVR"
+        style="width: 100%"
+      >
+        <h4 class="m-0">Vill du vinna ett VR-headset?</h4>
+      </a>
+      <div id="faqVR" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p>...där fick vi allt din uppmärksamhet, eller hur?</p>
+          <p>
+            D-LAN 2023 har tack vare vår magnifika sponsor
+            <a href="https://vrgaming.se/" class="text-danger">VRGaming</a> ett
+            VR-headset att lotta ut. Vi vill ge detta headset till den LANare
+            som D-LANat hårdast på hela D-LAN, så reglerna för detta är som
+            följer:
+          </p>
+          <ul>
+            <li>
+              Vi kommer att dra vinnaren till headsetet kort efter LANet ur vår
+              patenterade D-LAN-rafflemachine 3000.
+            </li>
+            <li>
+              För varje turnering eller event du deltar i kommer du att få en
+              lott till vår raffle.
+            </li>
+            <li>
+              Det är inte bara D-LANs egna turneringar vi snackar om här! Även
+              händelser på LANet kommer att räknas, och det kommer att framgå
+              vilka events som ger en raffle-ticket.
+            </li>
+            <li>
+              Dessutom, varje lunchtävling du deltar i när vi står i Collo
+              mellan den 02/5 - 10/5 kommer att ge en raffle-ticket.
+            </li>
+          </ul>
+          <p class="mb-2">
+            Efter LANet så kommer vi att slå ihop alla tickets, och dra en
+            lyckligt lottad vinnare som tar hem ett Meta Quest 2, inklusive lite
+            tillbehör och två spel, helt gratis. No strings attached. Vinnaren
+            kommer att kontaktas via e-post med alla detaljer när det väl är
+            dags!
+          </p>
+        </div>
+      </div>
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqTournament"
+        style="width: 100%"
+      >
+        <h4 class="m-0">Turneringsschema</h4>
+      </a>
+      <div id="faqTournament" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p>
+            Vi kommer att hålla i en hel drös med turneringar under hela LANet,
+            och medan tiderna kan ändras lite beroende på omständigheter är
+            schemat för dem som följer:
+          </p>
+          <ul>
+            <li>12/5 kl. 21:00 - D-LAN öppnar</li>
+            <li>12/5 kl. 23:00 - Teamfight Tactics</li>
+            <li>13/5 kl. 10.00 - Schack</li>
+            <li>13/5 kl. 12:00 - Configuras Mario Kart-turnering</li>
+            <li>13/5 kl. 14:00 - League of Legends</li>
+            <li>
+              13/5 kl. 20:00 - Sectras Smash-turnering (i samarbete med Smash
+              University)
+            </li>
+            <li>13/5 kl. 22:00 - CS:GO</li>
+            <li>14/5 kl. 10:00 - D-LAN stänger</li>
+          </ul>
+          <p class="mb-2">
+            För mer information om D-LANs egna turneringar, dra en kik på
+            <a href="/tournament/" class="text-danger">turneringssidan</a>. Där
+            hittar du regler och anmälningsinfo för turneringarna, samt våra
+            prispotter.
+          </p>
+          <p>
+            För Mario Kart och Super Smash Bros. turneringen behöver du inte
+            anmäla dig. Så länge du har köpt entrébiljett den dagen är det bara
+            att dyka upp och vara med!
+          </p>
+        </div>
+      </div>
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqOne"
+        style="width: 100%"
+      >
+        <h4 class="m-0">När är biljettsläppet?</h4>
+      </a>
+      <div id="faqOne" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p>
+            Biljetterna har släppts! Glid in på
+            <a href="/tickets/" class="text-danger">biljettsidan</a> och köp
+            dina biljetter redan idag!
+          </p>
+          <p>
+            Det enda kravet för att du ska få köpa biljett är att du har ett
+            giltigt LiU-ID. Du kan köpa två biljetter per LiU-ID, vilket innebär
+            att du som student kan ta med dig någon som inte är går på LiU. Så
+            ja, mamma kan också följa med. Absolut. Det blir ännu roligare om
+            mamma också spelar LoL.
+          </p>
+          <p class="mb-2">
+            Om du vill sitta nära dina vänner på LANet så bör ni komma överens
+            om ett gruppnamn, och ange det under beställningen. Då kommer vi att
+            vrida ut-och-in på oss själva för att se till att ni ska få sitta
+            tillsammans.
+          </p>
+        </div>
+      </div>
+
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqTwo"
+        style="width: 100%"
+      >
+        <h4 class="m-0">När är lagsläppet?</h4>
+      </a>
+      <div id="faqTwo" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p>
+            Så du vill vara en epic gamer och delta i turneringar? Good for you,
+            old sport. För CS:GO och League of Legends håller vi öppet för
+            laganmälningar mellan den 02/05 - 10/05. Minst en person i laget
+            behöver ha köpt en biljett, och komma förbi i Collo och anmäla laget
+            genom att visa sitt ordernummer. Medan för shack och Teamfight
+            Tactics behövs ingen anmälan i Collo, utan knip eran biljett direkt
+            och anmäl sedan med länken ni får på mailen!
+          </p>
+          <p>
+            När laget har anmälts måste de andra i laget köpa sina biljetter så
+            snart som möjligt. Alla biljetters ordernummer behöver skickas i
+            direktmeddelande till TobiasE#2228 på Discord (Turnering och Biljett
+            på vår Discord-server). När alla biljetter är bekräftade kommer ert
+            lag att vara fullt anmält och redo att köra!
+          </p>
+          <p class="mb-2">
+            Kommer ni på allt för sent att ni vill delta är det inte helt kört!
+            Så länge du har fått tag på en biljett och har ett fullt lag, och
+            det finns platser kvar i turneringarna, så kommer ni ha möjlighet
+            att anmäla er när ni kommer fram till LANet. Stalka upp någon ur
+            D-LAN 2023 och prata med oss så ser vi vad vi kan göra.
+          </p>
+        </div>
+      </div>
+
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqSeven"
+        style="width: 100%"
+      >
+        <h4 class="m-0">Vad händer på LANet?</h4>
+      </a>
+      <div id="faqSeven" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p>
+            Den stora lockelsen är ju självklart våra fyra storslagna
+            turneringar, där du och ett väl sammansvetsat lag har möjlighet att
+            vinna massor med priser. Eller så kan man titta på när lagen
+            försöker att vinna en massa pengar på vår stream, vilket är sjukt
+            kul det med. Kika på
+            <a href="tournament/" class="text-danger">turneringssidan</a> för
+            mer information!
+          </p>
+          <p>
+            Väl på lanet finns det massor att hitta på, oavsett om du har
+            datorplats eller inte. Det kommer finnas möjlighet att köra en mängd
+            olika spel, några populära exempel är Clone Hero, Fifa och Just
+            Dance.
+          </p>
+          <p>
+            Tillsammans med SchlagU har vi på lördagen ett watchparty för
+            Eurovision, så att vi gemensamt kan heja fram Sverige som solklar
+            vinnare. I samarbete med AktU kommer det finnas en brädspelshörna
+            med alla möjliga spel du kan tänka dig. Ett flertal företag kommer
+            också finnas på plats med egna roliga aktiviteter, så se till att
+            hälsa på dem.
+          </p>
+          <p class="mb-2">
+            Bland annat kommer Sectra hålla en turnering i Super Smash Bros. i
+            samarbete med Smash University efter den berömda LoL-turneringen,
+            det vill ni inte missa. Configura håller en fartfylld turnering i
+            Mario Kart 8 efter turneringen i Schack på lördagen. Slutligen vill
+            jag presentera ett samarbete med VRGaming, som kommer ge möjlighet
+            att inte bara testa på VR, utan även vinna ett helt eget VR-headset!
+          </p>
+        </div>
+      </div>
+      {% comment %}
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqThree"
+        style="width: 100%"
+      >
+        <h4 class="m-0">Lunchtävlingar?</h4>
+      </a>
+      <div id="faqThree" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p>
+            Självklart kommer vi hitta på roliga saker innan lanet också, att
+            tagga igång tillsammans är alltid kul. Du kommer hitta oss i Collo
+            med roliga lunchtävlingar varje dag mellan 2/5 och 10/5. Det finns
+            en chans att vinna gratis biljetter till D-LAN, något som alla så
+            klart vill ha.
+          </p>
+          <ul class="mb-2">
+            <li>
+              2/5 vill vi se era fingertoppar glöda när de knappar på
+              tangentbordet. Det är dags att ta reda på vem som är snabbast på
+              att skriva.
+            </li>
+
+            <li>
+              3/5 är det dags att röra på höfterna och dansa loss till grym
+              musik. Just Dance står på schemat.
+            </li>
+
+            <li>
+              4/5 är det dags för ett samarbete med VRGaming. Vi välkomnar dig
+              till en helt ny värld med ett VR-headset på huvudet. Väl där får
+              du spela musik med lasersvärd, coolt jag vet, Beat Saber up next!
+            </li>
+
+            <li>
+              5/5 behöver du än en gång bra fingerfärdighet, men den här gången
+              är det inget tangentbord som gäller. Vi sätter upp Clone Hero och
+              kollar vem som kammar hem flest poäng med en gitarr i famnen.
+              Dagen till ära har vi också ett samarbete med
+              <a
+                href="https://webhallen.se/"
+                class="text-danger"
+                target="_blank"
+                >Webhallen</a
+              >. Därför tävlar vi ut ett presentkort hos dem på 300 kr till
+              personen med sjukast gitarrsolo!
+            </li>
+
+            <li>
+              8/5 går det fort. Vi har rotat fram en ratt, och nu är det dags
+              för race. Wrooom!
+            </li>
+
+            <li>
+              9/5 är det ännu en gång dags för ett samarbete, denna gång med
+              Configura. Jag har hört rykten om att det delas ut mat till de
+              första som deltar i deras lunchtävling, en extra anledning att ta
+              sig dit med andra ord!
+            </li>
+
+            <li>
+              10/5 grand finale och därmed sista chansen att få gratis biljetter
+              till D-LAN. Sist ut är Super Smash Bros Home Run, vem kommer
+              längst?
+            </li>
+          </ul>
+        </div>
+      </div>
+      {% endcomment %}
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqFour"
+        style="width: 100%"
+      >
+        <h4 class="m-0">Hur fungerar datorskjutsen?</h4>
+      </a>
+      <div id="faqFour" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p>
+            D-LAN 2023 erbjuder datorskjuts. Ansvaret över utrustningen ligger
+            på deltagarna, det vill säga att ni packar er utrustning själva och
+            ansvarar för att det är säkert! Vi ansvarar därför
+            <span
+              class="text-danger"
+              style="text-weight: bold; text-decoration: underline"
+              >inte</span
+            >
+            för skador som kan uppkomma på grund av bristande förvaring /
+            förpackning av utrustning.
+          </p>
+          <p>Bra att tänka på vid packning av datorutrustning:</p>
+          <ul>
+            <li>
+              Svep gärna in skärmar/datorer i något mjukt (exempelvis handduk).
+            </li>
+            <li>
+              Använd en bra förpackning, förslagsvis en flyttlåda, att placera
+              utrustningen i. Här kan ni även medföra tangentbord, datormus,
+              sladdar etc.
+            </li>
+            <li>
+              Markera tydligt upp lådan eller utrustningen med namn och LiU-ID.
+            </li>
+          </ul>
+          <p>
+            D-LAN erbjuder datorskjuts från de områden som markerats på kartan
+            nedan. Klicka på kartan för att se exakt plats och tid för varje
+            individuell plats. Tiderna är preliminära och kan komma att ändras.
+            Skulle tiderna ändras kommer de påverkade kontaktas via den
+            e-postadress som angivits vid biljettköp.
+          </p>
+          <p class="mb-2">
+            <a
+              href="https://www.google.com/maps/d/u/0/viewer?mid=1dH_zaJt_mzFmDWrqitFc0-8xwm8-LZc&ll=58.40690030852366%2C15.583585906776225&z=13"
+              target="_blank"
+              ><img
+                src="{% static 'img/karta.png' %}"
+                style="width: 100%"
+                class="border border-dark"
+                data-bs-toggle="tooltip"
+                data-bs-placement="left"
+                title="Klicka på kartan för att få en bättre överblick kring vart vi stannar och vilka tider."
+            /></a>
+          </p>
+          <p>
+            Det är viktigt att du är redo med din utrustning på angiven plats
+            när vi väl kommer för att hinna med samtliga upphämtningar.
+          </p>
+          <p class="mb-2">
+            Om du bor någon annanstans än tidigare nämnda områden och önskar
+            datorskjuts går det bra att höra av sig till
+            <a href="mailto:projektledare@d-lan.se" class="text-danger"
+              >projektledare@d-lan.se</a
+            >
+            så ser vi om det går att lösa.
+          </p>
+        </div>
+      </div>
+
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqFive"
+        style="width: 100%"
+      >
+        <h4 class="m-0">Packlista</h4>
+      </a>
+      <div id="faqFive" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p>
+            Vi önskar att vi kunde ge dig hela världen när du kom till D-LAN. I
+            en perfekt värld hade vi kittat varje plats på LANet med en RTX
+            4090-utrustad dator, ett PS5 och en XBox Series X och varenda spel
+            du hade kunnat drömma om. Men detta är inte är en perfekt värld, men
+            detta till trots så har vi lyckats se till att följande ingår till
+            varje datorplats:
+          </p>
+          <h4>Detta får du (låna) av D-LAN:</h4>
+          <ul>
+            <li>Bord</li>
+            <li>Stol</li>
+            <li>Eluttag (två stycken per plats)</li>
+            <li>Nätverksuttag (men ingen kabel!)</li>
+          </ul>
+          <h4>Du kan behöva ta med dig följande saker:</h4>
+          <ul class="mb-2">
+            <li>
+              Gaming-rigg (dator, skärm, kablar, accessoarer) - eller rentav din
+              laptop. En 9000 IQ play är att beställa datorskjuts också, för då
+              behöver du inte ens ta med detta.
+            </li>
+            <li>
+              Nätverkskabel på drygt 5 meter - sjukt viktigt om du vill köra
+              online.
+            </li>
+            <li>
+              Hygienartiklar. Det är för din bordsgrannes skull. Lite för din
+              skull också.
+            </li>
+            <li>
+              Ett betalkort med pengar. Både för microtransactions och för
+              handel i vår kiosk. Vi tar inte emot kontanter på LANet.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <a
+        class="btn btn-primary mb-2"
+        data-bs-toggle="collapse"
+        href="#faqSix"
+        style="width: 100%"
+      >
+        <h4 class="m-0">Hur kan jag kontakta D-LAN?</h4>
+      </a>
+      <div id="faqSix" class="collapse" data-bs-parent="#faq">
+        <div class="collapse-pad">
+          <p class="mb-2">
+            Vill du komma i kontakt med någon speciell ur D-LANs crew, eller om
+            du vill komma i kontakt med alla samtidigt så hittar du oss på
+            <a href="https://discord.gg/dCz3mfMXCa" class="text-danger"
+              >Discord</a
+            >. Om du som vår fanatiska projektledare föredrar e-post (ew.) så
+            hittar du våra e-poster i vår
+            <a href="/hall-of-fame/" class="text-danger">Hall of Fame</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

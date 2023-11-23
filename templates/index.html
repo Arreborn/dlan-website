@@ -1,0 +1,177 @@
+{% extends 'base.html' %} {% load static %}
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+{% block header %}
+
+<script src="{% static 'js/timer.js' %}"></script>
+{% endblock %} {% block index %}
+
+<div
+  class="p-2 text-white offcanvas offcanvas-top offcanvas-l show popup"
+  style="height: 100vh; background-color: #12182a"
+  id="banner"
+>
+  <div style="text-align: center; margin-top: 2em">
+    <img
+      src="{% static 'img/logo.png' %}"
+      style="width: 14em"
+      alt=""
+      class="pb-4"
+    />
+    <br />
+    <h4 id="timer"><div class="spinner-border text-light"></div></h4>
+    <hr />
+    <h4>
+      Huvudsponsor:
+      <a href="https://webhallen.com/" target="_blank">
+        <img
+          src="{% static 'img/spons/webhallen.png' %}"
+          style="height: 2.5em"
+          class="mx-2"
+        />
+      </a>
+    </h4>
+    <br />
+    <div id="enter_btn">
+      <button
+        type="button"
+        class="btn btn-lrg btn-dark"
+        id="enter_button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#banner"
+        style="width: 8em"
+      >
+        <h5 class="p-1 m-0">Enter</h5>
+      </button>
+    </div>
+    <br />
+    <a href="https://discord.gg/dCz3mfMXCa" target="_blank"
+      ><img
+        src="{% static 'img/discord.svg' %}"
+        class="mx-2"
+        style="margin-top: width: 4.5em; height: 4.5em"
+    /></a>
+    <a href="https://www.facebook.com/DLANLiTH" target="_blank"
+      ><img
+        src="{% static 'img/facebook.svg' %}"
+        class="mx-2"
+        style="margin-top: width: 4.5em; height: 4.5em"
+    /></a>
+    <a href="https://www.twitch.tv/dlan_liu" target="_blank"
+      ><img
+        src="{% static 'img/twitch.svg' %}"
+        class="mx-2"
+        style="margin-top: width: 4.5em; height: 4.5em"
+    /></a>
+  </div>
+</div>
+
+<script>
+  var button = document.getElementById("enter_button");
+  if (window.innerWidth < 768) {
+    // check if screen size is mobile
+    button.parentNode.removeChild(button); // remove button from DOM
+    document.getElementById("enter_btn").innerHTML =
+      "<div class='py-1 btn btn-lrg btn-dark'><h5 class='p-1 m-0'>Swipe up to enter</h5></div>"; // update text
+
+    // add touch event listeners
+    let startY = 0;
+    let endY = 0;
+    document.addEventListener("touchstart", function (e) {
+      startY = e.touches[0].clientY;
+    });
+
+    document.addEventListener("touchmove", function (e) {
+      endY = e.touches[0].clientY;
+    });
+
+    document.addEventListener("touchend", function (e) {
+      if (startY > endY && startY - endY > 100) {
+        document.getElementById("banner").classList.remove("show");
+        document.body.style.overflow = "auto";
+        banner.hide();
+        this.window.removeEventListener("touchstart", arguments.callee);
+        this.window.removeEventListener("touchmove", arguments.callee);
+        this.window.removeEventListener("touchend", arguments.callee);
+      }
+    });
+  } else {
+    button.addEventListener("click", function () {
+      document.body.style.overflow = "auto";
+    });
+
+    // add enter key event listener
+    window.addEventListener("keydown", function (event) {
+      if (event.keyCode === 13) {
+        document.getElementById("banner").classList.remove("show");
+        document.body.style.overflow = "auto";
+        banner.hide();
+        this.window.removeEventListener("keydown", arguments.callee);
+      }
+    });
+  }
+
+  var banner = new bootstrap.Offcanvas(document.getElementById("banner"));
+</script>
+{% endblock %} {% block body %}
+
+<!-- main article body -->
+<div style="text-align: center">
+  <img src="{% static 'img/logo_yr.png' %}" width="300" height="178" alt="" />
+</div>
+<h1 class="text-center mt-2 mb-0" id="current">12/5 - 14/5</h1>
+{% comment %}
+<div class="text-center mt-2 row">
+  <div class="col-6">
+    <a
+      href="/tickets"
+      class="btn btn-primary btn-block mb-3"
+      style="width: 100%"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="ALERT: Biljetterna har släppts! Köp din idag!"
+    >
+      <p class="mb-0" style="font-size: 1.1em">Biljettköp</p>
+    </a>
+  </div>
+  <div class="col-6">
+    {% endcomment %}
+    <a
+      href="/tournament/"
+      class="btn btn-primary btn-block mb-2 mt-2"
+      style="width: 100%"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Kolla schemat för D-LANs egna turneringar här!"
+    >
+      <p class="mb-0" style="font-size: 1.1em">Turneringsschema</p>
+    </a>
+    {% comment %}
+  </div>
+</div>
+{% endcomment %} {% comment %}
+<div class="ratio ratio-16x9 mb-2">
+  <iframe
+    src="https://drive.google.com/file/d/1Obl7hG4PVDPW0RKTv89PI514koewL4F1/preview"
+    width="640"
+    height="480"
+    allow="autoplay"
+  ></iframe>
+  {% endcomment %}
+  <!-- Add a placeholder for the Twitch embed -->
+  <div id="twitch-embed"></div>
+
+  <!-- Load the Twitch embed JavaScript file -->
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+  <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+  <script type="text/javascript">
+    new Twitch.Embed("twitch-embed", {
+      width: "100%",
+      height: 610,
+      channel: "dlan_liu",
+      // Only needed if this page is going to be embedded on other websites
+      parent: ["d-lan.se", "localhost"],
+    });
+  </script>
+</div>
+{%endblock%}

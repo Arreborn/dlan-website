@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <body>
+    <div>
+      <h2 style="text-align: center" class="mt-2">Tack för ditt köp!</h2>
+      <hr />
+    </div>
+    <div style="text-align: left">
+      <p>
+        Du har nu en bokad biljett till D-LAN 2023. Vänligen kontrollera din
+        order nedan, och skulle något vara fel - svara på detta mail så hjälper
+        vi dig. Vid entrén kommer vi att be om ditt ordernummer, så se till att
+        du har detta tillgängligt.
+      </p>
+      <p>
+        Om du har beställt datorskjuts är det
+        <strong>mycket viktigt</strong> att du går in
+        <a href="https://forms.gle/h7btrdPSHPyxq34h9" target="_blank"
+          >på detta formulär</a
+        >, och anger vilken plats du vill bli upphämtad på.
+      </p>
+      <p>
+        Tänk på att du behöver ha med dig en egen nätverkskabel till LANet! Den
+        behöver vara drygt fem meter lång för att nå till våra switchar. Vi kan
+        inte garantera att det finns nätverkskablar att låna!
+      </p>
+      <p>
+        Du kan också registrera dig till Teamfight Tactics och
+        schack-turneringen nu! Kopiera ditt ordernummer, och gå in på
+        <a href="https://forms.gle/mZ2MYkzbLmhMgM1G6" target="_blank"
+          >denna länk</a
+        >
+        för att registrera dig.
+      </p>
+      <p>Tagga D-LAN!</p>
+      <table class="table table-hover" data-bs-theme="dark">
+        <tr>
+          <th class="text-dark" style="margin-right: 8px">Din order:</th>
+          <th>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;</th>
+          <th></th>
+        </tr>
+        {% for detail in order_details %}
+        <tr>
+          <th class="text-dark">{{ detail.0 }}:</th>
+          <th></th>
+          <th class="text-dark">{{ detail.1 }}</th>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
